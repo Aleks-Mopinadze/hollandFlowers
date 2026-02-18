@@ -1,43 +1,46 @@
 ---
+import Swiper from "../../Swiper/Swiper.astro";
 
+
+const data = [
+    {
+        img: 'product1.webp',
+    },
+    {
+        img: 'product2.webp',
+    },
+    {
+        img: 'product3.webp',
+    },
+    {
+        img: 'product4.webp',
+    },
+]
 ---
 
 <section class="hero">
     <div class="container">
-        <div class="hero-picture">
-            <picture>
-                <source srcset="/hero/main.avif" type="image/avif">
-                <source srcset="/hero/main.webp" type="image/webp">
-                <img src="/hero/main.jpg" alt="Hero Description" class="hero-img">
-            </picture>
-        </div>
-        <h1>
-            თაიგულები ყველა მომენტისთვის
-        </h1>
+      <Swiper data={data} type="heroSwaper" />
+    </div>
+    <h1>
+        DUTCH FLOWERS
+    </h1>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque aut consectetur debitis doloribus error ex expedita impedit laboriosam minima nisi porro provident quaerat quibusdam sit tempore totam unde, veniam.
     </div>
 </section>
 
 <style>
     .hero {
-        padding: 50px 0;
-    }
-
-    .hero-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-        z-index: -1;
+        padding: 20px 0;
     }
 
     h1 {
         font-family: 'AnaKalandadze', sans-serif;
-        font-weight: 400;
-        font-size: 30px;
-        text-align: center;
-        color: #fff;
-        padding-bottom: 100px;;
+        font-weight: 800;
+        font-size: 20px;
+        color: black;
     }
+
+
 </style>
