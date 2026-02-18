@@ -1,0 +1,81 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const {data, type} = Astro.props
+---
+
+
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+        {data.map(item => {
+            return (
+                    <div class="swiper-slide">
+                        <img src=`/products/WEBP/${item.img}` alt="Flower" >
+                    </div>
+            )
+        })}
+    </div>
+</div>
+
+
+<style>
+    .swiper {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        background-color: #CB83FF;
+    }
+
+    .swiper-slide {
+        box-sizing: border-box;
+
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        transform: rotate(45deg);
+    }
+
+
+
+    @media screen and (min-width: 425px) {
+        .swiper {
+            width: 400px;
+            height: 400px;
+        }
+
+    }
+</style>
+
+
+
+<script>
+    import Swiper from 'swiper';
+    import { Autoplay, } from 'swiper/modules';
+
+    function initSwiper() {
+        var swiper = new Swiper(".mySwiper", {
+            modules: [Autoplay],
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 1500,
+                disableOnInteraction: false,
+            },
+        });
+    }
+
+    initSwiper()
+
+</script>
