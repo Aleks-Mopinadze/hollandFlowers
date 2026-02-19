@@ -4,13 +4,21 @@
 
 <section class="hero">
     <div class="container">
-
+        <h1>ჰოლანდიური ყვავილების მიწოდება
+            <span class="batumi">
+                <span>ბ</span>
+                <span>ა</span>
+                <span>თ</span>
+                <span>უ</span>
+                <span>მ</span>
+                <span>შ</span>
+                <span>ი</span>
+            </span>
+        </h1>
     </div>
-    <h1>
-        DUTCH FLOWERS
-    </h1>
-    <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque aut consectetur debitis doloribus error ex expedita impedit laboriosam minima nisi porro provident quaerat quibusdam sit tempore totam unde, veniam.
+    <div class="rose">
+        <span class="line"></span>
+        <img src="/rose.png" alt="Rose">
     </div>
 </section>
 
@@ -19,11 +27,62 @@
         padding: 20px 0;
     }
 
+    .container {
+        padding: 0 15px;
+    }
+
     h1 {
+        max-width: 290px;
+        margin: 0 auto;
+        text-align: center;
         font-family: 'AnaKalandadze', sans-serif;
         font-weight: 800;
-        font-size: 20px;
+        font-size: 40px;
         color: black;
+    }
+
+    .batumi {
+        color: #e19570;
+
+        span {
+            display: inline-block;
+            animation: wave 2s ease-in-out infinite;
+            margin-right: -10px;
+
+            &:nth-child(1) { animation-delay: 0s; }
+            &:nth-child(2) { animation-delay: 0.2s; }
+            &:nth-child(3) { animation-delay: 0.4s; }
+            &:nth-child(4) { animation-delay: 0.6s; }
+            &:nth-child(5) { animation-delay: 0.8s; }
+            &:nth-child(6) { animation-delay: 1.2s; }
+            &:nth-child(7) { animation-delay: 1.4s; }
+        }
+
+    }
+
+    @keyframes wave {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-5px);
+        }
+    }
+
+    .rose {
+        margin-top: 30px;
+        text-align: center;
+        position: relative;
+    }
+
+    .line {
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        display: block;
+        border-top: 1px solid black;
+        z-index: -1;
     }
 
 
