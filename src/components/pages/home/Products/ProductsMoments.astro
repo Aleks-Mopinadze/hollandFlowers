@@ -1,0 +1,109 @@
+---
+
+import Swiper from "../../../Swiper/Swiper.astro";
+
+
+---
+
+<section class="product-all-moments">
+    <div class="container">
+        <h2>თაიგულები ყველა მომენტისთვის</h2>
+        <div class="reason-items">
+            <div class="reason-item active">
+                <picture>
+                    <img src="/independentday.png" alt="Independent day">
+                </picture>
+                <span>8 მარტი</span>
+            </div>
+            <div class="reason-item">
+                <picture>
+                    <img src="/mothersday.png" alt="Mothers day">
+                </picture>
+                <span>3 მარტი</span>
+            </div>
+            <div class="reason-item">
+                <picture>
+                    <img src="/anniversary.png" alt="Anniversary day">
+                </picture>
+                <span>წლისთავი</span>
+            </div>
+        </div>
+        <div class="products-slider">
+            <Swiper items="" type="navigation" />
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .product-all-moments {
+        padding-bottom: 150px;
+    }
+
+    h2 {
+        text-align: center;
+        font-family: 'AnaKalandadze', sans-serif;
+        font-weight: 800;
+        font-size: 30px;
+        color: black;
+    }
+
+    .reason-items {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+
+    }
+
+    .reason-item {
+        border-right: 1px solid #c3bebe;
+        padding: 10px 20px;
+        border-radius: 2px;
+        border-bottom: 1px solid #c3bebe;
+        box-shadow: -3px 10px 10px 0 rgba(0, 0, 0, 0.2);
+
+
+        &:last-child {
+            border-right: none;
+        }
+
+
+        &.active {
+            box-shadow: 0 -5px 10px -5px inset rgba(0, 0, 0, 0.37);
+        }
+    }
+
+    img {
+        width: 60px;
+        height: 50px;
+    }
+
+    span {
+        display: block;
+        font-weight: bold;
+    }
+
+    .products-slider {
+        padding: 20px;
+        margin-top: 50px;
+        height: 200px;
+    }
+</style>
+
+<script>
+    const items = document.querySelectorAll('.reason-item');
+
+    items.forEach(item => {
+        item.addEventListener('click', (e)=> {
+            const clicked = e.currentTarget
+
+            if(clicked !== null){
+                if(!clicked.classList.contains('active')){
+                    items.forEach(itemsWithActive => itemsWithActive.classList.remove('active'))
+                    clicked.classList.add('active')
+                }
+
+            }
+        })
+    })
+</script>
