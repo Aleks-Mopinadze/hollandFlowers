@@ -1,0 +1,32 @@
+---
+import BannerCarousel from "./BannerSwiper/BannerCarousel.astro";
+import CardCarousel from "./CardSwiper/CardCarousel.astro";
+
+
+type CarouselType = 'banner' | 'card';
+
+
+interface CarouselItem {
+    title: string;
+    image?: string;
+    link?: string;
+}
+
+interface Props {
+    type: CarouselType,
+    items: CarouselItem[],
+}
+
+const {type, items}  = Astro.props;
+
+const CAROUSEL_COMPONENTS = {
+    banner: BannerCarousel,
+    card: CardCarousel,
+}
+
+const Element = CAROUSEL_COMPONENTS[type] || CardCarousel
+
+---
+
+<Element items={items} />
+
