@@ -1,9 +1,10 @@
 ---
 import BannerCarousel from "./BannerSwiper/BannerCarousel.astro";
 import CardCarousel from "./CardSwiper/CardCarousel.astro";
+import NavigationCarousel from "./NavigationSwiper/Navigation.astro";
 
 
-type CarouselType = 'banner' | 'card';
+type CarouselType = 'banner' | 'card' | 'navigation';
 
 
 interface CarouselItem {
@@ -22,6 +23,7 @@ const {type, items}  = Astro.props;
 const CAROUSEL_COMPONENTS = {
     banner: BannerCarousel,
     card: CardCarousel,
+    navigation: NavigationCarousel,
 }
 
 const Element = CAROUSEL_COMPONENTS[type] || CardCarousel
